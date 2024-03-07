@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Remove Input Value</title>
+</head>
+<body>
+
+<input type="text" id="myInput" value="Initial Value">
+<button onclick="removeInputValue()">Remove Value</button>
+
+<script>
+    function removeInputValue() {
+        // Get the input element by its ID
+        var inputElement = document.getElementById("myInput");
+
+        // Set the value of the input element to an empty string
+        inputElement.value = '';
+    }
+</script>
+
+</body>
+</html>
