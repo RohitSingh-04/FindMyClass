@@ -1,21 +1,21 @@
-const a = document.getElementById("class")
+const searchBar = document.getElementById("class")
 
 function onexit(){
-    if(a.value==''){
-        a.value="Enter class to search"
-        a.blur();
+    if(searchBar.value==''){
+        searchBar.value="Enter class to search"
+        searchBar.blur();
     }
 }
 
-a.addEventListener("focus",()=>{
-    a.value=""
+searchBar.addEventListener("focus",()=>{
+    searchBar.value=""
 })
 
-a.addEventListener("blur",()=>{
+searchBar.addEventListener("blur",()=>{
     onexit();
 })
 
-a.addEventListener("keypress", (event)=>{
+searchBar.addEventListener("keypress", (event)=>{
     if (event.key=="Enter"){
         onexit();
     }
