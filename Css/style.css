@@ -81,6 +81,39 @@ body{
     position: relative;
     height: 100vh;
 }
+.top-nav{
+    display: flex;
+    position: absolute;
+    justify-content: space-between;
+    top: 0px;
+    
+    width: 100vw;
+}
+.top-logo{
+    position: absolute;
+    left: 50px;
+    top: 5px;
+}
+.dark-mode{
+    position: absolute;
+    right: 50px;
+    top: 15px;
+    z-index: 100;
+}
+#dark-btn{
+    border: 0px;
+    mix-blend-mode: color-burn;
+    width: 35px;
+    height: 35px;
+    border-radius: 50px;
+    
+}
+#moon-icon{
+    position: relative;
+    font-size: 25px;
+    color: #5e17eb;
+    z-index: 110;
+}
 .image{
     position: absolute;
     top: 100px;
@@ -88,7 +121,7 @@ body{
 .search{
     
         position: relative;
-        top: 100px;  
+        top: 55px;  
 }
 .search input{
     padding: 0px 35px 0px 5px;
@@ -103,7 +136,7 @@ body{
     right: 5px;
    top: 3px;
 }
-#class{
+#input-txt{
     border: 0px;
     border-radius: 10px;
     width: 250px;
