@@ -1,0 +1,41 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+/*  set background img */
+body{
+    
+    height: 100vh;
+    background-image: url("/img/GEHU-bg-filter.png");
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: cover;
+    filter: brightness();
+    
+}
+.image-data{
+    display: flex;
+    position: relative;
+}
+.img-blur-bg{
+    border-radius: 18px;
+    height: 270px;
+    width: 400px;
+    background-color: #ffffff3b;
+    box-shadow: 0px 0px 80px #bebebe59;
+    position: absolute;
+    right: 35px;
+    top: 35px;
+}
+.image-data img{
+    position: absolute;
+    z-index: 100;
+    border-radius: 18px;
+    width : calc(750px / 2);
+    /* height: calc(451px / 2); */
+    right: 46px;
+    top: 44px;
+}
+
