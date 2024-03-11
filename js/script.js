@@ -6,6 +6,10 @@ let moon = document.getElementById("moon-icon")
 const logo = document.getElementById("class-finder-logo")
 const logoTop =document.getElementById("top-logo")
 const searchbtn = document.getElementById("search-btn")
+const FloorElement=document.getElementById("floor")
+const classNameElement=document.getElementById("className")
+const blockElement=document.getElementById("block")
+
 
 const cred = {
     url:"https://agomwuylpfnaszvybavj.supabase.co",
@@ -45,70 +49,54 @@ function isAlphaNumeric(str) {
     return true;
   };
 
+function querynRedirect(){
+    if (searchBar.value == '' || searchBar.value == 'Enter class to search')
+    {
+        return
+    }
+    else
+    {
+        let toSearch = searchBar.value
+        let enhancedSearch =''
+
+        for (let characters of toSearch){
+            if (isAlphaNumeric(characters)){
+                if (characters != '0'){
+                    enhancedSearch+=characters.toUpperCase();
+                }
+            }
+        }
+        
+        let responce = fetchCustom(enhancedSearch)
+
+        
+        classNameElement.innerHTML=searchBar.value
+
+        responce.then(x=>{
+            FloorElement.innerHTML=x[0].Floor
+            blockElement.innerHTML=x[0].Block
+        }) 
+        window.location.href = "#result"
+
+    }
+}
+
 searchBar.addEventListener("focus",()=>{
     if(searchBar.value=="Enter class to search"){
     searchBar.value=""
     }
 })
 
-searchBar.addEventListener("blur",()=>{
-    onexit();
-})
+searchBar.addEventListener("blur", onexit)
 
 searchBar.addEventListener("keypress", (event)=>{
     if (event.key=="Enter"){
         onexit();
+        querynRedirect();
     }
 })
 darkBtn.addEventListener("click",()=>{
-    if(flag==1){
-    document.body.style.backgroundColor="#212121"
-    logo.src="/img/LOGO_DARK.png"
-    logoTop.src="/img/LOGO6.png"
-    moon.style.color="#5e17eb"
     
-    flag = 0
-    }
-    else{
-        document.body.style.backgroundColor="lightgrey"
-        logo.src="/img/mainLogo.png"
-        logoTop.src="/img/LOGO-2.png"
-        moon.style.color="#5e17eb"
-        flag = 1
-    }
 })
 
-searchbtn.addEventListener("click", ()=>{
-    if (searchBar.value == '' || searchBar.value == 'Enter class to search'){
-        
-    }
-    else{
-        let q = searchBar.value
-        let n =''
-
-        for (let i of q){
-            if (isAlphaNumeric(i)){
-                n+=i.toUpperCase();
-            }
-        }
-        
-        let arr = fetchCustom(n)
-
-        let acid, Floor
-        let tag=document.getElementById("block-id")
-
-        arr.then(x=>{
-
-            acid= x[0].Academic_id
-            Floor=x[0].Floor
-            tag.innerHTML=acid
-            window.location.replace("/result.html")
-        }) 
-
-        console.log(acid,Floor)
-
-
-        // window.location.replace("/result.html")
-        // document.getElementById("text-data").style = "background-color: red;"
-    }
-})
+searchbtn.addEventListener("click", querynRedirect)

@@ -5,7 +5,7 @@
 }
 
 /*  set background img */
-body{
+.result{
     
     height: 100vh;
     background-image: url("/img/GEHU-bg-filter.png");
@@ -39,3 +39,21 @@ body{
     top: 44px;
 }
 
+#className{
+    font-size: large;
+    color:chocolate;
+    font-weight: bolder;
+}
+
+#floor{
+    font-size: large;
+    color:chocolate;
+    font:bold;
+    font-weight: bolder;
+}
+
+#block{
+    font-size: large;
+    color:chocolate;
+    font-weight: bolder;
+}
