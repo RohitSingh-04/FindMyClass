@@ -14,13 +14,13 @@ const cred = {
 
 const supabase = createClient(cred.url, cred.key)
 
-
 let flag = 1
 
 async function fetchCustom(query) {
     const { data, error } = await supabase
     .from('Classes')
     .select().eq("Class_Name", `${query}`);
+
     return data;
 }
 
@@ -92,9 +92,22 @@ searchbtn.addEventListener("click", ()=>{
             }
         }
         
-        console.log(n)
         let arr = fetchCustom(n)
-        console.log(arr)
+
+        let acid, Floor
+        let tag=document.getElementById("block-id")
+
+        arr.then(x=>{
+
+            acid= x[0].Academic_id
+            Floor=x[0].Floor
+            tag.innerHTML=acid
+            window.location.replace("/result.html")
+        }) 
+
+        console.log(acid,Floor)
+
+
         // window.location.replace("/result.html")
         // document.getElementById("text-data").style = "background-color: red;"
     }
