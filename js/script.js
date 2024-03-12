@@ -71,9 +71,15 @@ function querynRedirect(){
         let responce = fetchCustom(enhancedSearch)
 
         responce.then(x=>{
-            classNameElement.innerHTML=searchBar.value
-            FloorElement.innerHTML=x[0].Floor
+            if (x.length == 0){
+                blockElement.innerHTML="Not Found!"
+                FloorElement.innerHTML = "Please Check the Spelling."
+                classNameElement.innerHTML=searchBar.value
+                blockImage.src=`/img/NotFound.png`
+            }
             blockElement.innerHTML=x[0].Block
+            FloorElement.innerHTML=x[0].Floor
+            classNameElement.innerHTML=searchBar.value
             blockImage.src=`/img/${x[0].Block}.jpg`
         })
 
