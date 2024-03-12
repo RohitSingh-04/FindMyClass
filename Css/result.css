@@ -7,7 +7,7 @@
 }
 
 /*  set background img */
-body {
+.output {
 
     height: 100vh;
     background-image: url("/img/GEHU-bg-filter.png");
@@ -15,11 +15,42 @@ body {
     background-position: center;
     background-size: cover;
     filter: brightness();
+    display: flex;
+
 
 }
 
-.main {
-    display: flex;
+.text-data {
+    width: 50vw;
+    position: relative;
+    color: white;
+    font-family: "Poppins";
+    font-weight: 600;
+    font-size: 20px;
+    text-align: center;
+}
+
+.text-bg {
+    display: inline-block;
+    border-radius: 18px;
+    height: 225px;
+    width: 325px;
+    background-color: #112240b4;
+    box-shadow: 0px 0px 80px #112240b4;
+    position: absolute;
+    top: 275px;
+    left: 100px;
+}
+#move-inp-btn{
+    color: rgb(125, 20, 254);
+    
+    border: 0px;
+    background-color: black;
+}
+
+
+.text-bg div {
+    margin: 40px;
 }
 
 .image-data {
@@ -27,6 +58,7 @@ body {
     position: relative;
     width: 50vw;
     height: 100vh;
+
 
 }
 
@@ -46,33 +78,6 @@ body {
     z-index: 100;
     border-radius: 18px;
     width: 425px;
-    /* height: calc(451px / 2); */
-    right: 82px;
+    right: 81px;
     top: 50px;
-}
-
-.text-data {
-    width: 50vw;
-    height: 100vh;
-    display: flex;
-    flex-direction: column;
-    position: relative;
-    color: white;
-    font-family: "Poppins";
-    font-weight: 600;
-    word-spacing: 3px;
-    font-size: 30px;
-    /* top: 255px;
-    left: 275px; */
-    
-}
-.text-data span{
-    background-color: #f3e8ff;
-    width: 25vw;
-    height: 45vh;
-    position: absolute;
-    display: flex;
-    justify-content: center;
-    flex-direction: column;
-    border-radius: 25px;
 }
