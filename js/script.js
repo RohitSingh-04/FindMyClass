@@ -9,7 +9,8 @@ const searchbtn = document.getElementById("search-btn")
 const FloorElement=document.getElementById("floor")
 const classNameElement=document.getElementById("className")
 const blockElement=document.getElementById("block")
-
+const blockImage=document.getElementById("Block-Image")
+const resultSection=document.getElementById("result")
 
 const cred = {
     url:"https://agomwuylpfnaszvybavj.supabase.co",
@@ -73,7 +74,9 @@ function querynRedirect(){
             classNameElement.innerHTML=searchBar.value
             FloorElement.innerHTML=x[0].Floor
             blockElement.innerHTML=x[0].Block
-        }) 
+            blockImage.src=`/img/${x[0].Block}.jpg`
+        })
+
         window.location.href = "#result"
 
     }
@@ -99,15 +102,16 @@ darkBtn.addEventListener("click",()=>{
         logo.src="/img/LOGO_DARK.png"
         logoTop.src="/img/LOGO6.png"
         moon.style.color="#5e17eb"
-    
+        resultSection.style.backgroundImage="url('/img/NightGEHU.jpeg')"
         flag = 0
-        }
-        else{
-            document.body.style.backgroundColor="lightgrey"
-            logo.src="/img/mainLogo.png"
-            logoTop.src="/img/LOGO-2.png"
-            moon.style.color="#5e17eb"
-            flag = 1
+    }
+    else{
+        document.body.style.backgroundColor="lightgrey"
+        logo.src="/img/mainLogo.png"
+        logoTop.src="/img/LOGO-2.png"
+        moon.style.color="#5e17eb"
+        flag = 1
+        resultSection.style.backgroundImage="url('/img/GEHU-bg-filter.png')"
         }
 })
 
