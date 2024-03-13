@@ -1,0 +1,93 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap');
+:root{
+    font-family: "Poppins";
+}
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+body{
+   background-color: #212121; 
+}
+.team-card-container{
+    display: flex;
+    flex: 1 1;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    min-width: calc(100vw - 20px);
+    max-width: calc(100vw - 20px);
+    min-height: min-content;
+    /* max-height: -moz-fit-content; */
+    max-height: fit-content;
+    padding: 10px;
+    flex-wrap: wrap;
+    overflow-x: hidden;
+}
+.mem1{
+    width: 220px;
+    height: 240px;
+    /* border: 2px solid black; */
+    display: flex;
+    flex: 1 1;
+    flex-direction: column;
+    justify-content: flex-start;
+    align-items: center;
+    text-align: center;
+    
+    padding: 5px;
+    margin: 5px;
+    border-radius: 15px;
+    background-color: #bebebe;
+    box-shadow: hsla(0,0%,100%,.6);
+}
+
+.mem-img img{
+    border-radius: 50%;
+    height: 135px;
+    object-fit: cover;
+    
+}
+.name{
+    font-size: 20px;
+    color: #000;
+    font-weight: 700;
+}
+.designation{
+    font-size: 15px;
+    color: #000;
+    font-weight: 700;
+}
+.social-handle{
+    display: flex;
+    flex: 1 1;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    width: 200px;
+    height: 25px;
+}
+.social-handle a{
+    margin-left: 10px;
+    font-size: 20px;
+    
+}
+.about-top-txt{
+        display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    font-size: 20px;
+    font-weight: 700;
+    text-transform: uppercase;
+    color: #fff;
+    margin-top: 10px;
+    text-shadow: hsla(0,0%,100%,.6) 1px 2px 6px;
+    text-align: center;
+    /* background-color: black; */
+}
+.about-top-txt span:nth-child(2){
+    font-size: 14px;
+}
