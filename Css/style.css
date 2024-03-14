@@ -51,6 +51,7 @@ body{
     
 }
 .nav ul li a{
+    color: #5e17eb;
     position: relative;
     display: flex;
     justify-content: center;
@@ -62,6 +63,10 @@ body{
     text-decoration: none;
     
 }
+.nav ul li a .text{
+    font-size: 14px;
+}
+    
 .nav ul li a .icon{
     position: relative;
     display: block;
@@ -101,14 +106,14 @@ body{
     top: 15px;
     z-index: 100;
 }
-#dark-btn{
+/* #dark-btn{
     border: 0px;
     mix-blend-mode: color-burn;
     width: 35px;
     height: 35px;
     border-radius: 50px;
     
-}
+} */
 #moon-icon{
     position: relative;
     font-size: 25px;

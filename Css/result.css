@@ -81,3 +81,18 @@
     right: 81px;
     top: 50px;
 }
+@media screen and (max-width:1024px) {
+    .text-bg{
+        background-color: yellow; 
+    }
+}
+@media screen and (max-width:745px) {
+    .text-bg{
+        background-color: blue; 
+    }
+    .output{
+        display: flex;
+        justify-content: center;
+        align-items: center;
+    }
+}
