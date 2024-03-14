@@ -80,8 +80,8 @@ function querynRedirect(){
             blockElement.innerHTML=x[0].Block
             FloorElement.innerHTML=x[0].Floor
             classNameElement.innerHTML=searchBar.value
-            // blockImage.src=`/img/${x[0].Block}.jpg`
-            blockImage.src=`/img/Acadmic.png`
+            blockImage.src=`/img/${x[0].Block}.jpg`
+            // blockImage.src=`/img/Acadmic.png`
             blockImage.style="right: 80px;top: 58px"
         })
 
