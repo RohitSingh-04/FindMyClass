@@ -1,16 +1,11 @@
 import { createClient } from 'https://esm.sh/@supabase/supabase-js@2';
 
 const searchBar = document.getElementById("input-txt")
-const darkBtn = document.getElementById("dark-btn")
-let moon = document.getElementById("moon-icon")
-const logo = document.getElementById("class-finder-logo")
-const logoTop =document.getElementById("top-logo")
 const searchbtn = document.getElementById("search-btn")
 const FloorElement=document.getElementById("floor")
 const classNameElement=document.getElementById("className")
 const blockElement=document.getElementById("block")
 const blockImage=document.getElementById("Block-Image")
-const resultSection=document.getElementById("result")
 
 const cred = {
     url:"https://agomwuylpfnaszvybavj.supabase.co",
@@ -18,8 +13,6 @@ const cred = {
 }
 
 const supabase = createClient(cred.url, cred.key)
-
-let flag = 1
 
 async function fetchCustom(query) {
     const { data, error } = await supabase
@@ -104,23 +97,7 @@ searchBar.addEventListener("keypress", (event)=>{
         querynRedirect();
     }
 })
-darkBtn.addEventListener("click",()=>{
-    if(flag==1){
-        document.body.style.backgroundColor="#212121"
-        logo.src="/img/LOGO_DARK.png"
-        logoTop.src="/img/LOGO6.png"
-        moon.style.color="#5e17eb"
-        resultSection.style.backgroundImage="url('/img/NightGEHU.jpeg')"
-        flag = 0
-    }
-    else{
-        document.body.style.backgroundColor="lightgrey"
-        logo.src="/img/mainLogo.png"
-        logoTop.src="/img/LOGO-2.png"
-        moon.style.color="#5e17eb"
-        flag = 1
-        resultSection.style.backgroundImage="url('/img/GEHU-bg-filter.png')"
-        }
-})
+
+
 
 searchbtn.addEventListener("click", querynRedirect)

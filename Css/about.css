@@ -7,9 +7,7 @@
     padding: 0;
     box-sizing: border-box;
 }
-body{
-   background-color: #212121; 
-}
+
 .team-card-container{
     display: flex;
     flex: 1 1;
@@ -82,7 +80,7 @@ body{
     font-size: 20px;
     font-weight: 700;
     text-transform: uppercase;
-    color: #fff;
+    color: #dbbc0a;
     margin-top: 10px;
     text-shadow: hsla(0,0%,100%,.6) 1px 2px 6px;
     text-align: center;
@@ -90,4 +88,63 @@ body{
 }
 .about-top-txt span:nth-child(2){
     font-size: 14px;
+}
+
+.header-container{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    position: fixed;
+    bottom: 30px;
+    left: 0px;
+    right: 0px;
+    margin: 0px auto;
+    z-index: 100;
+
+
+}
+.nav{
+    position: relative;
+    width: 400px;
+    height: 70px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: white;
+    border-radius: 10px;
+}
+.nav ul{
+    display: flex;
+    width: 285px;
+    
+}
+.nav ul li{
+    position: relative;
+    list-style: none; 
+    width: 70px; 
+    height: 70px;
+    
+}
+.nav ul li a{
+    color: #5e17eb;
+    position: relative;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    width: 100%;
+    font-weight: 500;
+    font-size: 14px;
+    text-decoration: none;
+    
+}
+.nav ul li a .text{
+    font-size: 14px;
+}
+    
+.nav ul li a .icon{
+    position: relative;
+    display: block;
+    text-align: center;
+    line-height: 30px;
 }
