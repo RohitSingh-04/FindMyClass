@@ -1,17 +1,11 @@
 import { createClient } from 'https://esm.sh/@supabase/supabase-js@2';
 
 const searchBar = document.getElementById("input-txt")
-const darkBtn = document.getElementById("dark-btn")
-const darkBtnImg = document.getElementById("moonBtnImg")
-const darkmodeText =document.getElementById("darkmodetext")
-const logo = document.getElementById("class-finder-logo")
-const logoTop =document.getElementById("top-logo")
 const searchbtn = document.getElementById("search-btn")
 const FloorElement=document.getElementById("floor")
 const classNameElement=document.getElementById("className")
 const blockElement=document.getElementById("block")
 const blockImage=document.getElementById("Block-Image")
-const resultSection=document.getElementById("result")
 
 const cred = {
     url:"https://agomwuylpfnaszvybavj.supabase.co",
@@ -19,8 +13,6 @@ const cred = {
 }
 
 const supabase = createClient(cred.url, cred.key)
-
-let DARKMODE_FLAG = false
 
 async function fetchCustom(query) {
     const { data, error } = await supabase
@@ -91,28 +83,6 @@ function querynRedirect(){
     }
 }
 
-function darkmodeConfig(){
-
-    if(!DARKMODE_FLAG){
-        DARKMODE_FLAG = true
-        document.body.style.backgroundColor="#212121"
-        logo.src="/img/LOGO_DARK.png"
-        darkBtnImg.name ="sunny"
-        darkmodeText.innerText="Light"
-        logoTop.src="/img/LOGO6.png"
-        resultSection.style.backgroundImage="url('/img/NightGEHU.jpeg')";
-    }
-    else{
-        DARKMODE_FLAG = false
-        document.body.style.backgroundColor="lightgrey"
-        logo.src="/img/mainLogo.png"
-        darkBtnImg.name = "moon-outline"
-        darkmodeText.innerText="Dark"
-        logoTop.src="/img/LOGO-2.png"
-        resultSection.style.backgroundImage="url('/img/GEHU-bg-filter.png')"
-        }
-}
-
 searchBar.addEventListener("focus",()=>{
     if(searchBar.value=="Enter class to search"){
     searchBar.value=""
@@ -128,6 +98,6 @@ searchBar.addEventListener("keypress", (event)=>{
     }
 })
 
-darkBtn.addEventListener("click", darkmodeConfig)
+
 
 searchbtn.addEventListener("click", querynRedirect)
