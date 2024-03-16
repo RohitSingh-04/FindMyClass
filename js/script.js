@@ -43,6 +43,19 @@ function isAlphaNumeric(str) {
     return true;
   };
 
+function formatString(inputStr) {
+    // Convert the string to uppercase
+    let formattedStr = inputStr.toUpperCase();
+
+    // Define a regular expression pattern to find '0' not followed by a digit
+    let pattern = /(?<=\D)0+(?=\d)/g;
+
+    // Replace '0' with an empty string using the regular expression pattern
+    formattedStr = formattedStr.replace(pattern, '');
+
+    return formattedStr;
+}
+
 function querynRedirect(){
     if (searchBar.value == '' || searchBar.value == 'Enter class to search')
     {
@@ -51,15 +64,7 @@ function querynRedirect(){
     else
     {
         let toSearch = searchBar.value
-        let enhancedSearch =''
-
-        for (let characters of toSearch){
-            if (isAlphaNumeric(characters)){
-                if (characters != '0'){
-                    enhancedSearch+=characters.toUpperCase();
-                }
-            }
-        }
+        let enhancedSearch =formatString(toSearch)
         
         let responce = fetchCustom(enhancedSearch)
 
