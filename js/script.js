@@ -48,12 +48,13 @@ function formatString(inputStr) {
     let formattedStr = inputStr.toUpperCase();
 
     // Define a regular expression pattern to find '0' not followed by a digit
-    let pattern = /(?<=\D)0+(?=\d)/g;
+    let pattern = /(?<=\D)0+(?=\d)|[^a-zA-Z0-9_]/g;
 
     // Replace '0' with an empty string using the regular expression pattern
     formattedStr = formattedStr.replace(pattern, '');
 
     return formattedStr;
+
 }
 
 function querynRedirect(){
