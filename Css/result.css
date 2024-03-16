@@ -86,7 +86,7 @@
 
 @media screen and (min-width:520px) {
     .text-bg {
-        background-color: blue;
+        /* background-color: blue; */
         position: relative;
         top: 35px;
         height: 25vh;
@@ -112,7 +112,6 @@
 
 @media screen and (min-width:658px) {
     .text-bg {
-        background-color: blue;
         position: relative;
         top: 35px;
         height: 25vh;
@@ -138,7 +137,6 @@
 
 @media screen and (min-width:866px) {
     .text-bg {
-        background-color: blue;
         position: relative;
         top: 45px;
         height: 25vh;
@@ -172,7 +170,6 @@
         display: flex;
         flex-direction: column;
         justify-content: center;
-        background-color: red;
         width: 35vw;
         height: 40vh;
         position: absolute;
