@@ -1,14 +1,16 @@
 @import url('https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap');
-:root{
+
+:root {
     font-family: "Poppins";
 }
-*{
+
+* {
     margin: 0;
     padding: 0;
     box-sizing: border-box;
 }
 
-.team-card-container{
+.team-card-container {
     display: flex;
     flex: 1 1;
     flex-direction: row;
@@ -24,9 +26,10 @@
     flex-wrap: wrap;
     overflow-x: hidden;
 }
-.mem1{
+
+.mem1 {
     width: 220px;
-    height: 240px;
+    height: 250px;
     /* border: 2px solid black; */
     display: flex;
     flex: 1 1;
@@ -34,31 +37,34 @@
     justify-content: flex-start;
     align-items: center;
     text-align: center;
-    
+
     padding: 5px;
     margin: 5px;
     border-radius: 15px;
     background-color: #bebebe;
-    box-shadow: hsla(0,0%,100%,.6);
+    box-shadow: hsla(0, 0%, 100%, .6);
 }
 
-.mem-img img{
+.mem-img img {
     border-radius: 50%;
     height: 135px;
     object-fit: cover;
-    
+
 }
-.name{
+
+.name {
     font-size: 20px;
     color: #000;
     font-weight: 700;
 }
-.designation{
+
+.designation {
     font-size: 15px;
     color: #000;
     font-weight: 700;
 }
-.social-handle{
+
+.social-handle {
     display: flex;
     flex: 1 1;
     flex-direction: row;
@@ -67,13 +73,15 @@
     width: 200px;
     height: 25px;
 }
-.social-handle a{
+
+.social-handle a {
     margin-left: 10px;
     font-size: 20px;
-    
+
 }
-.about-top-txt{
-        display: flex;
+
+.about-top-txt {
+    display: flex;
     justify-content: center;
     align-items: center;
     flex-direction: column;
@@ -82,15 +90,16 @@
     text-transform: uppercase;
     color: #dbbc0a;
     margin-top: 10px;
-    text-shadow: hsla(0,0%,100%,.6) 1px 2px 6px;
+    text-shadow: hsla(0, 0%, 100%, .6) 1px 2px 6px;
     text-align: center;
     /* background-color: black; */
 }
-.about-top-txt span:nth-child(2){
+
+.about-top-txt span:nth-child(2) {
     font-size: 14px;
 }
 
-.header-container{
+.header-container {
     display: flex;
     justify-content: center;
     align-items: center;
@@ -103,29 +112,33 @@
 
 
 }
-.nav{
+
+.nav {
     position: relative;
     width: 400px;
     height: 70px;
     display: flex;
     justify-content: center;
     align-items: center;
-    background-color: white;
+    background-color: #bdb5b5;
     border-radius: 10px;
 }
-.nav ul{
+
+.nav ul {
     display: flex;
     width: 285px;
-    
+
 }
-.nav ul li{
+
+.nav ul li {
     position: relative;
-    list-style: none; 
-    width: 70px; 
+    list-style: none;
+    width: 70px;
     height: 70px;
-    
+
 }
-.nav ul li a{
+
+.nav ul li a {
     color: #5e17eb;
     position: relative;
     display: flex;
@@ -136,15 +149,25 @@
     font-weight: 500;
     font-size: 14px;
     text-decoration: none;
-    
+
 }
-.nav ul li a .text{
+
+.nav ul li a .text {
     font-size: 14px;
 }
-    
-.nav ul li a .icon{
+
+.nav ul li a .icon {
     position: relative;
     display: block;
     text-align: center;
     line-height: 30px;
+}
+
+@media only screen and (max-width:479px ) {
+    .header-container {
+        position: sticky;
+        top: 10px;
+        left: 0px;
+        right: 0px;
+    }
 }
