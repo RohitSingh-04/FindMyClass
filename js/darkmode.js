@@ -17,7 +17,7 @@ function darkmodeConfig(){
         try{
             logoTop.src="/img/LOGO6.png"
             logo.src="/img/LOGO_DARK.png"
-            resultSection.style.backgroundImage="url('/img/NightGEHU.jpeg')";
+            resultSection.style.backgroundImage="url('img/NightGEHU.jpeg')";
         }
         catch (TypeError){}
     }
@@ -29,7 +29,7 @@ function darkmodeConfig(){
         try{
             logoTop.src="/img/LOGO-2.png"
             logo.src="/img/mainLogo.png"
-            resultSection.style.backgroundImage="url('/img/GEHU-bg-filter.png')"
+            resultSection.style.backgroundImage="url('img/GEHU-bg-filter.png')"
         }
         catch(TypeError){}
         }
