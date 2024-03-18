@@ -15,8 +15,8 @@ function darkmodeConfig(){
         darkBtnImg.name ="sunny"
         darkmodeText.innerText="Light"
         try{
-            logoTop.src="/img/LOGO6.png"
-            logo.src="/img/LOGO_DARK.png"
+            logoTop.src="img/LOGO6.png"
+            logo.src="img/LOGO_DARK.png"
             resultSection.style.backgroundImage="url('img/NightGEHU.jpeg')";
         }
         catch (TypeError){}
@@ -27,8 +27,8 @@ function darkmodeConfig(){
         darkBtnImg.name = "moon-outline"
         darkmodeText.innerText="Dark"
         try{
-            logoTop.src="/img/LOGO-2.png"
-            logo.src="/img/mainLogo.png"
+            logoTop.src="img/LOGO-2.png"
+            logo.src="img/mainLogo.png"
             resultSection.style.backgroundImage="url('img/GEHU-bg-filter.png')"
         }
         catch(TypeError){}
