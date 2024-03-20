@@ -83,8 +83,9 @@ function querynRedirect(){
             // blockImage.src=`/img/Acadmic.png`
             // blockImage.style="right: 80px;top: 58px"
         })
-
-        window.location.href = "#result"
+        
+        hidealternate();
+        // window.location.href = "#result"
 
     }
 }

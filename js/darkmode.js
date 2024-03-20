@@ -3,7 +3,7 @@ const darkBtnImg = document.getElementById("moonBtnImg")
 const darkmodeText =document.getElementById("darkmodetext")
 const logo = document.getElementById("class-finder-logo")
 const logoTop =document.getElementById("top-logo")
-const resultSection=document.getElementById("result")
+// const resultSection=document.getElementById("result")
 
 let DARKMODE_FLAG = false
 
