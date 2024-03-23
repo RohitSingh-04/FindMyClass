@@ -77,12 +77,7 @@ function querynRedirect(){
                 blockElement.innerHTML="Not Found!"
                 FloorElement.innerHTML = "Please Check the Spelling."
                 classNameElement.innerHTML=searchBar.value
-<<<<<<< HEAD
-                blockImage.src=`/img/NotFound.png`
-                out.style.display="block"
-=======
                 blockImage.src=`img/NotFound.png`
->>>>>>> c12ee6c62358394e2915fb93e0c8ed6eb1181792
             }
             blockElement.innerHTML=x[0].Block
             FloorElement.innerHTML=x[0].Floor
