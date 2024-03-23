@@ -3,7 +3,7 @@ const darkBtnImg = document.getElementById("moonBtnImg")
 const darkmodeText =document.getElementById("darkmodetext")
 const logo = document.getElementById("class-finder-logo")
 const logoTop =document.getElementById("top-logo")
-const resultSection=document.getElementById("result")
+// const resultSection=document.getElementById("result")
 
 let DARKMODE_FLAG = false
 
@@ -15,9 +15,9 @@ function darkmodeConfig(){
         darkBtnImg.name ="sunny"
         darkmodeText.innerText="Light"
         try{
-            logoTop.src="/img/LOGO6.png"
-            logo.src="/img/LOGO_DARK.png"
-            resultSection.style.backgroundImage="url('/img/NightGEHU.jpeg')";
+            logoTop.src="img/LOGO6.png"
+            logo.src="img/LOGO_DARK.png"
+            resultSection.style.backgroundImage="url('img/NightGEHU.jpeg')";
         }
         catch (TypeError){}
     }
@@ -27,9 +27,9 @@ function darkmodeConfig(){
         darkBtnImg.name = "moon-outline"
         darkmodeText.innerText="Dark"
         try{
-            logoTop.src="/img/LOGO-2.png"
-            logo.src="/img/mainLogo.png"
-            resultSection.style.backgroundImage="url('/img/GEHU-bg-filter.png')"
+            logoTop.src="img/LOGO-2.png"
+            logo.src="img/mainLogo.png"
+            resultSection.style.backgroundImage="url('img/GEHU-bg-filter.png')"
         }
         catch(TypeError){}
         }

@@ -15,7 +15,7 @@
     background-position: center;
     background-size: cover;
     filter: brightness();
-    display: flex;
+    /* display: flex; */
     align-items: center;
     flex-direction: column-reverse;
     /* align-content: flex-end; */
