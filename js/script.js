@@ -6,6 +6,9 @@ const FloorElement=document.getElementById("floor")
 const classNameElement=document.getElementById("className")
 const blockElement=document.getElementById("block")
 const blockImage=document.getElementById("Block-Image")
+const out=document.getElementById("result")
+
+out.style.display="none"
 
 const cred = {
     url:"https://agomwuylpfnaszvybavj.supabase.co",
@@ -75,6 +78,7 @@ function querynRedirect(){
                 FloorElement.innerHTML = "Please Check the Spelling."
                 classNameElement.innerHTML=searchBar.value
                 blockImage.src=`/img/NotFound.png`
+                out.style.display="block"
             }
             blockElement.innerHTML=x[0].Block
             FloorElement.innerHTML=x[0].Floor
