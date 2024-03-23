@@ -19,4 +19,11 @@ function hidealternate(){
     }
 }
 
-homeicon.addEventListener("click", hidealternate)
+homeicon.addEventListener("click", ()=>{
+
+    if (searchDiv.style.display!="none")
+    {
+        return
+    }
+    
+    hidealternate()})
