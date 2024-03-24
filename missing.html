@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Missing</title>
+</head>
+<body>
+    <form action="thanks.html">
+        <h1>Add Missing Classes</h1>
+        <label for="Class_Name">Class name</label>
+        <input type="text" name="Class_Name" id="classname" placeholder="Enter Class Name" required/>
+
+        <label for="floor">floor</label>
+        <select name="floor" id="floor" required>
+            <option></option>
+            <option value="Basement">Basement</option>
+            <option value="Ground Floor">Ground Floor</option>
+            <option value="1st Floor">1st Floor</option>
+            <option value="2nd Floor">2nd Floor</option>
+            <option value="3rd Floor">3rd Floor</option>
+            <option value="4th Floor">4th Floor</option>
+        </select>
+        
+        <label for="block">Block</label>
+        <select name="block" id="block" required>
+            <option></option>
+            <option value="Academic Block 1">Academic Block 1</option>
+            <option value="Nursing Block">Nursing Block</option>
+            <option value="Pharmacy Block">Pharmacy Block</option>
+            <option value="Admin Block">Admin Block</option>
+            <option value="Machenical Engineering Department">Machenical Engineering Department</option>
+            <option value="Cafeteria">Cafeteria</option>
+        </select>
+
+        <button id="Submit">Submit</button>
+
+    </form>
+    <script src="js/addReq.js"></script>
+</body>
+</html>
