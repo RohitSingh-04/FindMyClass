@@ -1,13 +1,8 @@
 const nav_Search = document.getElementById("nav-search")
 
-const searchBar = document.getElementById("input-txt")
+const searchBar = document.getElementById("input-txt");
+function onLoadHandler(){
+    searchBar.focus();
+}
 
-nav_Search.addEventListener("click", ()=>{
-    if (searchDiv.style.display != "none"){
-        searchBar.focus();
-    }
-    else{
-        hidealternate();
-        searchBar.focus();
-    }
-})
+

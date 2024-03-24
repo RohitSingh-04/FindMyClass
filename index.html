@@ -6,42 +6,23 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Find My Class</title>
     <link rel="stylesheet" href="Css/style.css">
-    <link rel="stylesheet" href="Css/result.css">
     <link rel="icon" href="img/favicon.ico">
+    <script src="js/importPage.js"></script>
 </head>
 
-<body>
+<body onload="onLoadHandler()">
+    <link rel="stylesheet" href="Css/result.css">
     
-    <header id="home" class="header-container" id="header">
-        
-        <nav id="navigation" class="nav">
-            <ul>
-                <li class="list"><a id="home_anchor">
-                        <span class="icon"><ion-icon name="home-outline"></ion-icon></span>
-                        <span class="text">Home</span>
-                    </a></li>
-                <li class="list"><a href="about.html">
-                        <span class="icon"><ion-icon name="person-outline"></ion-icon></span>
-                        <span class="text">About</span>
-                    </a></li>
-                <li class="list"><a id="dark-btn">
-                        <span class="icon"><ion-icon name="moon-outline" id="moonBtnImg"></ion-icon></span>
-                        <span class="text" id="darkmodetext">Dark</span>
-                    </a></li>
-                
-                <li class="list"><a id="nav-search">
-                        <span class="icon"><ion-icon name="search-outline"></ion-icon></span>
-                        <span class="text">Search</span>
-                    </a></li>
-            </ul>
-        </nav>
-    </header>
+    <div include-html="sharedNav.html"></div>
+    <script>
+        importPage();
+        </script>
     <div class="main" id="search-div">
         <div class="image">
             <img id="class-finder-logo" src="img/mainLogo.png" width="300px" alt="">
         </div>
         <div class="search">
-            <input type="text" id="input-txt" value="Enter class to search">
+            <input type="text" id="input-txt" placeholder="Enter class to search">
             <button id="search-btn">
                 <ion-icon name="search-outline"></ion-icon>
             </button>
@@ -60,23 +41,24 @@
                 <div class="class-name" id="className"></div>
             </div>
             
-      
-       
+            
+            
             <div class="img-blur-bg">
-            <img id="Block-Image" src="img/images.png" alt="Block Image">
-        </div>
-    </section>
-
-    <footer>
-
-    </footer>
-    <script type="module" src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.esm.js"></script>
-    <script nomodule src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.js"></script>
-    <script type="module" src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2"></script>
-    <script src="js/hideSection.js"></script>
-    <script type = "module" src="js/script.js"></script>
-    <script src="js/darkmode.js"></script>
-    <script src="js/searchNav.js"></script>
+                <img id="Block-Image" src="img/images.png" alt="Block Image">
+            </div>
+        </section>
+        
+        <footer>
+            
+        </footer>
+        
+        <script type="module" src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.esm.js"></script>
+        <script nomodule src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.js"></script>
+        <script type="module" src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2"></script>
+        <script src="js/hideSection.js"></script>
+        <script type = "module" src="js/script.js"></script>
+        <script src="js/searchNav.js"></script>
+        <script src="js/darkmode.js"></script>
 </body>
 
 </html>

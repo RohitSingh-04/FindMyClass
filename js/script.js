@@ -16,14 +16,11 @@ const cred = {
 }
 
 const supabase = createClient(cred.url, cred.key)
-
-async function fetchCustom(query) {
     const { data, error } = await supabase
     .from('Classes')
     .select().eq("Class_Name", `${query}`);
-
     return data;
-}
+
 
 function onexit(){
     if(searchBar.value==''){

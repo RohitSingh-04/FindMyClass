@@ -18,12 +18,3 @@ function hidealternate(){
         hidden="result"
     }
 }
-
-homeicon.addEventListener("click", ()=>{
-
-    if (searchDiv.style.display!="none")
-    {
-        return
-    }
-    
-    hidealternate()})
