@@ -1,8 +1,4 @@
-const darkBtn = document.getElementById("dark-btn")
-const darkBtnImg = document.getElementById("moonBtnImg")
-const darkmodeText = document.getElementById("darkmodetext")
-const logo = document.getElementById("class-finder-logo")
-const logoTop = document.getElementById("top-logo")
+
 
 function getDarkModeFlag() {
     let defaultBrowserTheme = localStorage.getItem('DARKMODE_FLAG');
@@ -16,39 +12,42 @@ function getDarkModeFlag() {
     return DARKMODE_FLAG;
 }
 
-function darkmodeConfig() {
 
-    const isDarkTheme = getDarkModeFlag();
 
-    if (isDarkTheme == 'true') {
-        document.body.style.backgroundColor = "#212121"
-        try {
-            darkBtnImg.name = "sunny"
-            darkmodeText.innerText = "Light"
-            logoTop.src = "img/LOGO6.png"
-            logo.src = "img/LOGO_DARK.png"
-            resultSection.style.backgroundImage = "url('img/NightGEHU.jpeg')";
+document.addEventListener("DOMContentLoaded", function() {
+    const darkBtn = document.getElementById("dark-btn");
+    const darkBtnImg = document.getElementById("moonBtnImg");
+    const darkmodeText = document.getElementById("darkmodetext");
+    const logo = document.getElementById("class-finder-logo");
+    const logoTop = document.getElementById("top-logo");
+    
+    function darkmodeConfig() {
+    
+        const isDarkTheme = getDarkModeFlag();
+    
+        if (isDarkTheme == 'true') {
+            document.body.style.backgroundColor = "#212121"
+            try {
+                darkBtnImg.name = "sunny"
+                darkmodeText.innerText = "Light"
+                logoTop.src = "img/LOGO6.png"
+                logo.src = "img/LOGO_DARK.png"
+                resultSection.style.backgroundImage = "url('img/NightGEHU.jpeg')";
+            }
+            catch (TypeError) { }
         }
-        catch (TypeError) { }
-    }
-    else {
-        document.body.style.backgroundColor = "lightgrey"
-        try {
-            darkBtnImg.name = "moon-outline"
-            darkmodeText.innerText = "Dark"
-            logoTop.src = "img/LOGO-2.png"
-            logo.src = "img/mainLogo.png"
-            resultSection.style.backgroundImage = "url('img/GEHU-bg-filter.png')"
+        else {
+            document.body.style.backgroundColor = "lightgrey"
+            try {
+                darkBtnImg.name = "moon-outline"
+                darkmodeText.innerText = "Dark"
+                logoTop.src = "img/LOGO-2.png"
+                logo.src = "img/mainLogo.png"
+                resultSection.style.backgroundImage = "url('img/GEHU-bg-filter.png')"
+            }
+            catch (TypeError) { }
         }
-        catch (TypeError) { }
     }
-}
-
-if (!darkBtn) {
-    darkmodeConfig();
-
-}
-else {
     darkBtn.addEventListener("click", () => {
         let DARKMODE_FLAG = getDarkModeFlag();
         if (DARKMODE_FLAG === 'false') {
@@ -60,5 +59,7 @@ else {
         localStorage.setItem('DARKMODE_FLAG', DARKMODE_FLAG);
         darkmodeConfig();
     });
-}
-darkmodeConfig();
+  
+    // ... rest of your darkmode.js code
+    darkmodeConfig();
+  });
