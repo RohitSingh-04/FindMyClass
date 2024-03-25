@@ -4,14 +4,20 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Missing</title>
+    <link rel="stylesheet" href="Css/missing.css">
+    <script src="js/importPage.js"></script>
 </head>
 <body>
+    <div include-html="sharedNav.html"></div>
+    <script>
+        importPage();
+    </script>
     <form action="thanks.html">
-        <h1>Add Missing Classes</h1>
-        <label for="Class_Name">Class name</label>
-        <input type="text" name="Class_Name" id="classname" placeholder="Enter Class Name" required/>
+        <h1>Add Missing Classes</h1><br/>
+        <label for="Class_Name">Class name</label><br/>
+        <input type="text" name="Class_Name" id="classname" placeholder="Enter Class Name" required/><br/><br/>
 
-        <label for="floor">floor</label>
+        <label for="floor">floor</label><br/>
         <select name="floor" id="floor" required>
             <option></option>
             <option value="Basement">Basement</option>
@@ -20,9 +26,9 @@
             <option value="2nd Floor">2nd Floor</option>
             <option value="3rd Floor">3rd Floor</option>
             <option value="4th Floor">4th Floor</option>
-        </select>
+        </select><br/><br/>
         
-        <label for="block">Block</label>
+        <label for="block">Block</label><br/>
         <select name="block" id="block" required>
             <option></option>
             <option value="Academic Block 1">Academic Block 1</option>
@@ -31,11 +37,23 @@
             <option value="Admin Block">Admin Block</option>
             <option value="Machenical Engineering Department">Machenical Engineering Department</option>
             <option value="Cafeteria">Cafeteria</option>
-        </select>
+        </select><br/><br/>
 
         <button id="Submit">Submit</button>
 
     </form>
+    
+    <footer>
+
+    </footer>
+    
     <script src="js/addReq.js"></script>
+    <script type="module" src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.esm.js"></script>
+    <script nomodule src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.js"></script>
+    <!-- <script type="module" src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2"></script> -->
+    <script src="js/hideSection.js"></script>
+    <script type = "module" src="js/script.js"></script>
+    <script src="js/searchNav.js"></script>
+    <script src="js/darkmode.js"></script>
 </body>
 </html>
