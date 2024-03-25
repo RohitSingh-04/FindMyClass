@@ -2,46 +2,48 @@ import { createClient } from 'https://esm.sh/@supabase/supabase-js@2';
 
 const searchBar = document.getElementById("input-txt")
 const searchbtn = document.getElementById("search-btn")
-const FloorElement=document.getElementById("floor")
-const classNameElement=document.getElementById("className")
-const blockElement=document.getElementById("block")
-const blockImage=document.getElementById("Block-Image")
-const out=document.getElementById("result")
+const FloorElement = document.getElementById("floor")
+const classNameElement = document.getElementById("className")
+const blockElement = document.getElementById("block")
+const blockImage = document.getElementById("Block-Image")
+const out = document.getElementById("result")
 
-out.style.display="none"
+out.style.display = "none"
 
 const cred = {
-    url:"https://agomwuylpfnaszvybavj.supabase.co",
-    key:"eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6ImFnb213dXlscGZuYXN6dnliYXZqIiwicm9sZSI6ImFub24iLCJpYXQiOjE3MDk4MTE4NTgsImV4cCI6MjAyNTM4Nzg1OH0.m1V8gwMXysoKafHHfWwAlr4n_7VQIgiY0bOxk6UsTX4"
+    url: "https://agomwuylpfnaszvybavj.supabase.co",
+    key: "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6ImFnb213dXlscGZuYXN6dnliYXZqIiwicm9sZSI6ImFub24iLCJpYXQiOjE3MDk4MTE4NTgsImV4cCI6MjAyNTM4Nzg1OH0.m1V8gwMXysoKafHHfWwAlr4n_7VQIgiY0bOxk6UsTX4"
 }
 
 const supabase = createClient(cred.url, cred.key)
+async function fetchCustom(query) {
     const { data, error } = await supabase
-    .from('Classes')
-    .select().eq("Class_Name", `${query}`);
+        .from('Classes')
+        .select().eq("Class_Name", `${query}`);
     return data;
+}
 
 
-function onexit(){
-    if(searchBar.value==''){
-        searchBar.value="Enter class to search"
+function onexit() {
+    if (searchBar.value == '') {
+        searchBar.value = "Enter class to search"
         searchBar.blur();
     }
 }
 
 function isAlphaNumeric(str) {
     var code, i, len;
-  
+
     for (i = 0, len = str.length; i < len; i++) {
-      code = str.charCodeAt(i);
-      if (!(code > 47 && code < 58) && // numeric (0-9)
-          !(code > 64 && code < 91) && // upper alpha (A-Z)
-          !(code > 96 && code < 123)) { // lower alpha (a-z)
-        return false;
-      }
+        code = str.charCodeAt(i);
+        if (!(code > 47 && code < 58) && // numeric (0-9)
+            !(code > 64 && code < 91) && // upper alpha (A-Z)
+            !(code > 96 && code < 123)) { // lower alpha (a-z)
+            return false;
+        }
     }
     return true;
-  };
+};
 
 function formatString(inputStr) {
     // Convert the string to uppercase
@@ -57,49 +59,47 @@ function formatString(inputStr) {
 
 }
 
-function querynRedirect(){
-    if (searchBar.value == '' || searchBar.value == 'Enter class to search')
-    {
+function querynRedirect() {
+    if (searchBar.value == '' || searchBar.value == 'Enter class to search') {
         return
     }
-    else
-    {
+    else {
         let toSearch = searchBar.value
-        let enhancedSearch =formatString(toSearch)
-        
+        let enhancedSearch = formatString(toSearch)
+
         let responce = fetchCustom(enhancedSearch)
 
-        responce.then(x=>{
-            if (x.length == 0){
-                blockElement.innerHTML="Not Found!"
+        responce.then(x => {
+            if (x.length == 0) {
+                blockElement.innerHTML = "Not Found!"
                 FloorElement.innerHTML = "Please Check the Spelling."
-                classNameElement.innerHTML=searchBar.value
-                blockImage.src=`img/NotFound.png`
+                classNameElement.innerHTML = searchBar.value
+                blockImage.src = `img/NotFound.png`
             }
-            blockElement.innerHTML=x[0].Block
-            FloorElement.innerHTML=x[0].Floor
-            classNameElement.innerHTML=searchBar.value
-            blockImage.src=`img/${x[0].Block}.jpg`
+            blockElement.innerHTML = x[0].Block
+            FloorElement.innerHTML = x[0].Floor
+            classNameElement.innerHTML = searchBar.value
+            blockImage.src = `img/${x[0].Block}.jpg`
             // blockImage.src=`/img/Acadmic.png`
             // blockImage.style="right: 80px;top: 58px"
         })
-        
+
         hidealternate();
         // window.location.href = "#result"
 
     }
 }
 
-searchBar.addEventListener("focus",()=>{
-    if(searchBar.value=="Enter class to search"){
-    searchBar.value=""
+searchBar.addEventListener("focus", () => {
+    if (searchBar.value == "Enter class to search") {
+        searchBar.value = ""
     }
 })
 
 searchBar.addEventListener("blur", onexit)
 
-searchBar.addEventListener("keypress", (event)=>{
-    if (event.key=="Enter"){
+searchBar.addEventListener("keypress", (event) => {
+    if (event.key == "Enter") {
         onexit();
         querynRedirect();
     }

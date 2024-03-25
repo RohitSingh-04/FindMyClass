@@ -4,5 +4,3 @@ const searchBar = document.getElementById("input-txt");
 function onLoadHandler(){
     searchBar.focus();
 }
-
-
