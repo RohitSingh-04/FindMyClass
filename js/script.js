@@ -24,13 +24,6 @@ async function fetchCustom(query){
     return data;
 }
 
-// function onexit() {
-//     if (searchBar.value == '') {
-//         searchBar.value = "Enter class to search"
-//         searchBar.blur();
-//     }
-// }
-
 function isAlphaNumeric(str) {
     var code, i, len;
 
@@ -81,12 +74,9 @@ function querynRedirect() {
             FloorElement.innerHTML = x[0].Floor
             classNameElement.innerHTML = searchBar.value
             blockImage.src = `img/${x[0].Block}.jpg`}
-            // blockImage.src=`/img/Acadmic.png`
-            // blockImage.style="right: 80px;top: 58px"
         })
 
         hidealternate();
-        // window.location.href = "#result"
 
     }
 }
@@ -97,11 +87,9 @@ searchBar.addEventListener("focus", () => {
     }
 })
 
-// searchBar.addEventListener("blur", onexit)
 
 searchBar.addEventListener("keypress", (event) => {
     if (event.key == "Enter") {
-        // onexit(); 
         querynRedirect();
     }
 })

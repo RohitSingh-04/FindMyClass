@@ -14,17 +14,17 @@ function getDarkModeFlag() {
 
 
 
-document.addEventListener("DOMContentLoaded", function() {
+document.addEventListener("DOMContentLoaded", function () {
     const darkBtn = document.getElementById("dark-btn");
     const darkBtnImg = document.getElementById("moonBtnImg");
     const darkmodeText = document.getElementById("darkmodetext");
     const logo = document.getElementById("class-finder-logo");
     const logoTop = document.getElementById("top-logo");
-    
+
     function darkmodeConfig() {
-    
+
         const isDarkTheme = getDarkModeFlag();
-    
+
         if (isDarkTheme == 'true') {
             document.body.style.backgroundColor = "#212121"
             try {
@@ -59,7 +59,6 @@ document.addEventListener("DOMContentLoaded", function() {
         localStorage.setItem('DARKMODE_FLAG', DARKMODE_FLAG);
         darkmodeConfig();
     });
-  
-    // ... rest of your darkmode.js code
+
     darkmodeConfig();
-  });
+});
