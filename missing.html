@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -7,53 +8,62 @@
     <link rel="stylesheet" href="Css/missing.css">
     <script src="js/importPage.js"></script>
 </head>
+
 <body>
     <div include-html="sharedNav.html"></div>
     <script>
         importPage();
     </script>
-    <form action="thanks.html">
-        <h1>Add Missing Classes</h1><br/>
-        <label for="Class_Name">Class name</label><br/>
-        <input type="text" name="Class_Name" id="classname" placeholder="Enter Class Name" required/><br/><br/>
 
-        <label for="floor">floor</label><br/>
-        <select name="floor" id="floor" required>
-            <option></option>
-            <option value="Basement">Basement</option>
-            <option value="Ground Floor">Ground Floor</option>
-            <option value="1st Floor">1st Floor</option>
-            <option value="2nd Floor">2nd Floor</option>
-            <option value="3rd Floor">3rd Floor</option>
-            <option value="4th Floor">4th Floor</option>
-        </select><br/><br/>
-        
-        <label for="block">Block</label><br/>
-        <select name="block" id="block" required>
-            <option></option>
-            <option value="Academic Block 1">Academic Block 1</option>
-            <option value="Nursing Block">Nursing Block</option>
-            <option value="Pharmacy Block">Pharmacy Block</option>
-            <option value="Admin Block">Admin Block</option>
-            <option value="Machenical Engineering Department">Machenical Engineering Department</option>
-            <option value="Cafeteria">Cafeteria</option>
-        </select><br/><br/>
+    <section id="form-complete">
+        <span class="common-span span-first">Add Missing Classes</span>
+        <div class="span-2-3-4">
+        <span class="common-span span-second">post your requirement</span>
+            <span class="common-span span-third">Please fill the form below to receive a quote for workspace.</span>
+            <span class="common-span span-fourth"> Please add all the details required</span>
+        </div>
+        <form action="thanks.html">
+            <label for="Class_Name" class="label">Class name</label>
+            <input type="text" name="Class_Name" id="classname" placeholder="Enter Class Name" required class="inp" />
 
-        <button id="Submit">Submit</button>
+            <label for="floor" class="label">floor</label>
+            <select name="floor" id="floor" required class="slct inp">
+                <option></option>
+                <option value="Basement">Basement</option>
+                <option value="Ground Floor">Ground Floor</option>
+                <option value="1st Floor">1st Floor</option>
+                <option value="2nd Floor">2nd Floor</option>
+                <option value="3rd Floor">3rd Floor</option>
+                <option value="4th Floor">4th Floor</option>
+            </select>
 
-    </form>
-    
+            <label for="block" class="label">Block</label>
+            <select name="block" id="block" required class="slct inp">
+                <option></option>
+                <option value="Academic Block 1">Academic Block 1</option>
+                <option value="Nursing Block">Nursing Block</option>
+                <option value="Pharmacy Block">Pharmacy Block</option>
+                <option value="Admin Block">Admin Block</option>
+                <option value="Machenical Engineering Department">Machenical Engineering Department</option>
+                <option value="Cafeteria">Cafeteria</option>
+            </select>
+
+            <button id="Submit" class="btn">Submit</button>
+
+        </form>
+    </section>
     <footer>
 
     </footer>
-    
+
     <script src="js/addReq.js"></script>
     <script type="module" src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.esm.js"></script>
     <script nomodule src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.js"></script>
     <!-- <script type="module" src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2"></script> -->
     <script src="js/hideSection.js"></script>
-    <script type = "module" src="js/script.js"></script>
+    <script type="module" src="js/script.js"></script>
     <script src="js/searchNav.js"></script>
     <script src="js/darkmode.js"></script>
 </body>
+
 </html>
