@@ -2,12 +2,12 @@
 
 function getDarkModeFlag() {
     let defaultBrowserTheme = localStorage.getItem('DARKMODE_FLAG');
-
+    
     if (!defaultBrowserTheme) {
         localStorage.setItem('DARKMODE_FLAG', 'false');
         defaultBrowserTheme = 'false'
     }
-
+    
     let DARKMODE_FLAG = defaultBrowserTheme;
     return DARKMODE_FLAG;
 }
@@ -15,6 +15,9 @@ function getDarkModeFlag() {
 
 
 document.addEventListener("DOMContentLoaded", function () {
+    const headingOfMissing = document.getElementById('spn-first')
+    
+    const descriptionOfMissing = document.getElementById('descriptionD')
     const darkBtn = document.getElementById("dark-btn");
     const darkBtnImg = document.getElementById("moonBtnImg");
     const darkmodeText = document.getElementById("darkmodetext");
@@ -32,7 +35,12 @@ document.addEventListener("DOMContentLoaded", function () {
                 darkmodeText.innerText = "Light"
                 logoTop.src = "img/LOGO6.png"
                 logo.src = "img/LOGO_DARK.png"
-                resultSection.style.backgroundImage = "url('img/NightGEHU.jpeg')";
+                resultSection.style.backgroundImage = "url('img/NightGEHU.jpeg')"
+                headingOfMissing.style.color="white"
+                console.log("testing...")
+                descriptionOfMissing.style.color="white"
+                console.log("testing...")
+
             }
             catch (TypeError) { }
         }
@@ -44,6 +52,8 @@ document.addEventListener("DOMContentLoaded", function () {
                 logoTop.src = "img/LOGO-2.png"
                 logo.src = "img/mainLogo.png"
                 resultSection.style.backgroundImage = "url('img/GEHU-bg-filter.png')"
+                headingOfMissing.style.color='black'
+                descriptionOfMissing.style.color='black'
             }
             catch (TypeError) { }
         }
