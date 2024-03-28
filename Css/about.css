@@ -162,7 +162,12 @@
     text-align: center;
     line-height: 30px;
 }
-
+.icon{
+    transition: all 1s cubic-bezier(0, 0.62, 0.11, 0.98);
+}
+.icon:hover{
+    transform: translateY(-3px);
+}
 @media only screen and (max-width:479px ) {
     .header-container {
         position: sticky;

@@ -79,8 +79,12 @@ body{
     
 } */
 
-
-
+.icon{
+    transition: all 1s cubic-bezier(0, 0.62, 0.11, 0.98);
+}
+.icon:hover{
+    transform: translateY(-3px);
+}
 .main{
     display: flex;
     flex-direction: column;
