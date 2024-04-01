@@ -152,31 +152,14 @@ body {
 .common-span {
     display: block;
     font-family: "Poppins";
-}
-
-.span-first {
-    /* background-color: #FAF8F88C; */
     height: 7%;
     width: 44%;
     margin-top: 3%;
     padding: 10px;
     text-align: center;
     border-radius: 5px;
-    /* box-shadow: 0px 0px 8px #FAF8F88C; */
 }
 
-.span-2-3-4 {
-    text-align: center;
-    /* border: 1px solid black; */
-    font-size: 10px;
-    font-weight: 300;
-}
-
-.span-second {
-    font-weight: 600;
-    font-size: 15px;
-    padding-bottom: 10px;
-}
 
 form {
     background-color: #FAF8F88C;
@@ -219,16 +202,17 @@ form {
 
 @media screen and (max-width:1025px) {
     form {
-        
+
         width: 50vw;
         height: 35vh;
     }
+
     .label {
         font-size: 18px;
         /* font-weight: 500; */
         margin-bottom: 5px;
     }
-    
+
     .inp {
         height: 30px;
         /* border-radius: 7px;
@@ -240,16 +224,17 @@ form {
 
 @media screen and (max-width:850px) {
     form {
-        
+
         width: 50vw;
         height: 35vh;
     }
+
     .label {
         font-size: 18px;
         /* font-weight: 500; */
         margin-bottom: 5px;
     }
-    
+
     .inp {
         height: 30px;
         /* border-radius: 7px;

@@ -2,27 +2,24 @@
 
 function getDarkModeFlag() {
     let defaultBrowserTheme = localStorage.getItem('DARKMODE_FLAG');
-    
+
     if (!defaultBrowserTheme) {
         localStorage.setItem('DARKMODE_FLAG', 'false');
         defaultBrowserTheme = 'false'
     }
-    
+
     let DARKMODE_FLAG = defaultBrowserTheme;
     return DARKMODE_FLAG;
 }
 
-
-
 document.addEventListener("DOMContentLoaded", function () {
-    const headingOfMissing = document.getElementById('spn-first')
-    
-    const descriptionOfMissing = document.getElementById('descriptionD')
+
     const darkBtn = document.getElementById("dark-btn");
     const darkBtnImg = document.getElementById("moonBtnImg");
     const darkmodeText = document.getElementById("darkmodetext");
     const logo = document.getElementById("class-finder-logo");
     const logoTop = document.getElementById("top-logo");
+    const headingOfMissing = document.getElementById("textMissing");
 
     function darkmodeConfig() {
 
@@ -36,11 +33,10 @@ document.addEventListener("DOMContentLoaded", function () {
                 logoTop.src = "img/LOGO6.png"
                 logo.src = "img/LOGO_DARK.png"
                 resultSection.style.backgroundImage = "url('img/NightGEHU.jpeg')"
-                headingOfMissing.style.color="white"
-                console.log("testing...")
-                descriptionOfMissing.style.color="white"
-                console.log("testing...")
-
+            }
+            catch (TypeError) { }
+            try {
+                headingOfMissing.style.color = "white"
             }
             catch (TypeError) { }
         }
@@ -52,8 +48,11 @@ document.addEventListener("DOMContentLoaded", function () {
                 logoTop.src = "img/LOGO-2.png"
                 logo.src = "img/mainLogo.png"
                 resultSection.style.backgroundImage = "url('img/GEHU-bg-filter.png')"
-                headingOfMissing.style.color='black'
-                descriptionOfMissing.style.color='black'
+            }
+            catch (TypeError) { }
+
+            try {
+                headingOfMissing.style.color = 'black'
             }
             catch (TypeError) { }
         }
