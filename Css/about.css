@@ -168,6 +168,10 @@
 .icon:hover{
     transform: translateY(-3px);
 }
+
+
+
+
 @media only screen and (max-width:479px ) {
     .header-container {
         position: sticky;
