@@ -27,7 +27,7 @@ function fetchData(){
 
 btn.addEventListener("click", ()=>{
     let a = fetchData()
-    if (a.name == "" || a.floor == "" || a.block==""){
+    if (a.Class_Name == "" || a.Floor == "" || a.Block==""){
         console.log('notdone')
         return ;
     }
