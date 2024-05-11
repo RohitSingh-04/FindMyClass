@@ -7,6 +7,7 @@ const classNameElement = document.getElementById("className")
 const blockElement = document.getElementById("block")
 const blockImage = document.getElementById("Block-Image")
 const out = document.getElementById("result")
+const classList = document.getElementById('classesList')
 
 out.style.display = "none"
 
@@ -21,7 +22,12 @@ async function fetchCustom(query){
     const { data, error } = await supabase
         .from('Classes')
         .select().eq("Class_Name", `${query}`);
-    return data;
+        return data;
+    }
+    
+    async function fetchNames(){
+        const {data, error} = await supabase.from('Classes').select('Class_Name');
+    return data
 }
 
 function isAlphaNumeric(str) {
@@ -81,6 +87,17 @@ function querynRedirect() {
     }
 }
 
+function addDataList(){
+    let responce = fetchNames();
+    var dataHTML = ""
+    responce.then(x =>{
+      for (let i=0; i<x.length; i++){
+        dataHTML+=`<option value = ${x[i].Class_Name}>${x[i].Class_Name}</option>`
+        classList.innerHTML = dataHTML;
+      }  
+    })
+}
+
 searchBar.addEventListener("focus", () => {
     if (searchBar.value == "Enter class to search") {
         searchBar.value = ""
@@ -94,6 +111,7 @@ searchBar.addEventListener("keypress", (event) => {
     }
 })
 
+addDataList();
 
 
 searchbtn.addEventListener("click", querynRedirect)
