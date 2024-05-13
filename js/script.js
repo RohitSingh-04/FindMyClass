@@ -18,15 +18,15 @@ const cred = {
 
 const supabase = createClient(cred.url, cred.key)
 
-async function fetchCustom(query){
+async function fetchCustom(query) {
     const { data, error } = await supabase
         .from('Classes')
         .select().eq("Class_Name", `${query}`);
-        return data;
-    }
-    
-    async function fetchNames(){
-        const {data, error} = await supabase.from('Classes').select('Class_Name');
+    return data;
+}
+
+async function fetchNames() {
+    const { data, error } = await supabase.from('Classes').select('Class_Name').ilike('Class_Name', `%${searchBar.value}%`);
     return data
 }
 
@@ -59,7 +59,7 @@ function formatString(inputStr) {
 }
 
 function querynRedirect() {
-    if (searchBar.value == '' || searchBar.value == 'Enter class to search') {
+    if (searchBar.value == '') {
         return
     }
     else {
@@ -75,11 +75,12 @@ function querynRedirect() {
                 classNameElement.innerHTML = searchBar.value
                 blockImage.src = `img/NotFound.png`
             }
-            else{
-            blockElement.innerHTML = x[0].Block
-            FloorElement.innerHTML = x[0].Floor
-            classNameElement.innerHTML = searchBar.value
-            blockImage.src = `img/${x[0].Block}.jpg`}
+            else {
+                blockElement.innerHTML = x[0].Block
+                FloorElement.innerHTML = x[0].Floor
+                classNameElement.innerHTML = searchBar.value
+                blockImage.src = `img/${x[0].Block}.jpg`
+            }
         })
 
         hidealternate();
@@ -87,16 +88,18 @@ function querynRedirect() {
     }
 }
 
-function addDataList(){
+function addDataList() {
     let responce = fetchNames();
     var dataHTML = ""
-    responce.then(x =>{
-      for (let i=0; i<x.length; i++){
-        dataHTML+=`<option value = ${x[i].Class_Name}>${x[i].Class_Name}</option>`
-        classList.innerHTML = dataHTML;
-      }  
+    responce.then(x => {
+        for (let i = 0; i < x.length; i++) {
+            dataHTML += `<option value = ${x[i].Class_Name} class="classes-names">`
+            classList.innerHTML = dataHTML;
+        }
     })
 }
+
+
 
 searchBar.addEventListener("focus", () => {
     if (searchBar.value == "Enter class to search") {
@@ -105,13 +108,24 @@ searchBar.addEventListener("focus", () => {
 })
 
 
+searchBar.addEventListener("input", (event) => {
+
+
+    if (searchBar.value == "") {
+        classList.innerHTML = "";
+    }
+
+    else {
+        addDataList();
+    }
+
+})
+
 searchBar.addEventListener("keypress", (event) => {
     if (event.key == "Enter") {
         querynRedirect();
     }
-})
-
-addDataList();
-
+}
+)
 
 searchbtn.addEventListener("click", querynRedirect)
