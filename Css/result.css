@@ -27,9 +27,6 @@
 
 .text-bg {
     /* display: inline-block; */
-    display: flex;
-    flex-direction: column;
-    flex-wrap: wrap;
     border-radius: 18px;
     height: 225px;
     width: 85vw;
