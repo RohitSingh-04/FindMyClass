@@ -1,0 +1,113 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Location Tracker</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      margin: 0;
+      background-color: #f0f0f0;
+      display: flex;
+      flex-direction: column;
+      height: 100vh;
+    }
+
+    h1 {
+      text-align: center;
+      margin: 20px 0;
+    }
+
+    #map {
+      flex-grow: 1;
+      width: 100%;
+    }
+  </style>
+</head>
+<body>
+  <h1>Your Location</h1>
+  <div id="map"></div>
+  <script async src="https://maps.googleapis.com/maps/api/js?key=AIzaSyA7VRrJc0nxBoH2WhemLcwhEqQnUCPfcTA&libraries=marker"></script>
+  <script>
+    const supabaseUrl = 'https://vykcwuxbhhfptwmpxryn.supabase.co';
+    const supabaseKey = 'eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6InZ5a2N3dXhiaGhmcHR3bXB4cnluIiwicm9sZSI6InNlcnZpY2Vfcm9sZSIsImlhdCI6MTcyODY2MTAyMCwiZXhwIjoyMDQ0MjM3MDIwfQ.Uo2vF2hW7M_NJXwWP657bb7koKem2yA2Z5P8gxrgc4o'; // Replace with your actual Supabase key
+    let map;
+    let marker;
+
+    function initMap(latitude, longitude) {
+      // Initialize the map
+      map = new google.maps.Map(document.getElementById('map'), {
+        center: { lat: latitude, lng: longitude },
+        zoom: 15
+      });
+
+      // Create and place the marker
+      marker = new google.maps.Marker({
+        position: { lat: latitude, lng: longitude },
+        map: map,
+        title: 'Your Location'
+      });
+    }
+
+    async function logLocation(latitude, longitude) {
+      const time = new Date().toISOString();
+      const response = await fetch(`${supabaseUrl}/rest/v1/locations_logs`, {
+        method: 'POST',
+        headers: {
+          'Content-Type': 'application/json',
+          'apikey': supabaseKey,
+          'Authorization': `Bearer ${supabaseKey}`
+        },
+        body: JSON.stringify([{ latitude, longitude, time }])
+      });
+
+      if (!response.ok) {
+        const error = await response.json();
+        console.error('Error logging location:', error);
+      } else {
+        console.log('Location logged successfully');
+      }
+    }
+
+    function updateMarkerPosition(latitude, longitude) {
+      if (marker) {
+        marker.setPosition({ lat: latitude, lng: longitude });
+        map.setCenter({ lat: latitude, lng: longitude }); // Center the map on the new position
+      }
+    }
+
+    function getCurrentLocation() {
+      if (navigator.geolocation) {
+        navigator.geolocation.watchPosition(position => {
+          const latitude = position.coords.latitude;
+          const longitude = position.coords.longitude;
+          if (!marker) {
+            initMap(latitude, longitude); // Initialize map and marker on first position
+          } else {
+            updateMarkerPosition(latitude, longitude); // Update marker position on subsequent positions
+          }
+          logLocation(latitude, longitude);
+        }, () => {
+          alert('Unable to retrieve your location.');
+        });
+      } else {
+        alert('Geolocation is not supported by this browser.');
+      }
+    }
+
+    // Call getCurrentLocation when the API is ready
+    function handleApiLoad() {
+      getCurrentLocation();
+    }
+
+    // Check if the Google Maps API has already loaded (in rare cases)
+    if (typeof window.google !== 'undefined' && typeof window.google.maps !== 'undefined') {
+      handleApiLoad();
+    } else {
+      // Otherwise, wait for the API to load and then call handleApiLoad
+      window.addEventListener('load', handleApiLoad);
+    }
+  </script>
+</body>
+</html>
