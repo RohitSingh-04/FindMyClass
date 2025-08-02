@@ -29,62 +29,6 @@ body{
 
 
 }
-.nav{
-    position: relative;
-    width: 400px;
-    height: 70px;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    background-color: white;
-    border-radius: 10px;
-}
-.nav ul{
-    display: flex;
-    width: 285px;
-    
-}
-.nav ul li{
-    cursor: pointer;
-    position: relative;
-    list-style: none; 
-    width: 70px; 
-    height: 70px;
-    
-}
-.nav ul li a{
-    color: #5e17eb;
-    position: relative;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    flex-direction: column;
-    width: 100%;
-    font-weight: 500;
-    font-size: 14px;
-    text-decoration: none;
-    
-}
-.nav ul li a .text{
-    font-size: 14px;
-}
-    
-.nav ul li a .icon{
-    position: relative;
-    display: block;
-    text-align: center;
-    line-height: 30px;
-}
-/* .nav ul li a .text{
-    
-} */
-
-.icon{
-    transition: all 1s cubic-bezier(0, 0.62, 0.11, 0.98);
-}
-.icon:hover{
-    transform: translateY(-3px);
-}
 .main{
     display: flex;
     flex-direction: column;

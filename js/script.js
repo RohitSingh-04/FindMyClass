@@ -1,4 +1,4 @@
-import { createClient } from 'https://esm.sh/@supabase/supabase-js@2';
+import {parseClasses, parseBlocks} from './data_parse.js'
 
 const searchBar = document.getElementById("input-txt")
 const searchbtn = document.getElementById("search-btn")
@@ -9,24 +9,26 @@ const blockImage = document.getElementById("Block-Image")
 const out = document.getElementById("result")
 const classList = document.getElementById('classesList')
 
-out.style.display = "none"
+out.style.display = "none";
 
-const cred = {
-    url: "https://agomwuylpfnaszvybavj.supabase.co",
-    key: "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6ImFnb213dXlscGZuYXN6dnliYXZqIiwicm9sZSI6ImFub24iLCJpYXQiOjE3MDk4MTE4NTgsImV4cCI6MjAyNTM4Nzg1OH0.m1V8gwMXysoKafHHfWwAlr4n_7VQIgiY0bOxk6UsTX4"
-}
-
-const supabase = createClient(cred.url, cred.key)
+const class_data = parseClasses();
+const block_data = parseBlocks();
 
 async function fetchCustom(query) {
-    const { data, error } = await supabase
-        .from('Classes')
-        .select().eq("Class_Name", `${query}`);
+    const data = class_data.find(item => item.Class_Name === query);
+    return data;
+}
+
+function fetchBlocks(block){
+    const data = block_data.find(item => item.Block === block);
+    console.log(data)
+    data.latitude = Number(data.Latitude)
+    data.longitude = Number(data.Longitude)
     return data;
 }
 
 async function fetchNames() {
-    const { data, error } = await supabase.from('Classes').select('Class_Name').ilike('Class_Name', `%${searchBar.value}%`);
+    const data = class_data.filter(item => item.Class_Name.includes(formatString(searchBar.value)))
     return data
 }
 
@@ -69,17 +71,19 @@ function querynRedirect() {
         let responce = fetchCustom(enhancedSearch)
 
         responce.then(x => {
-            if (x.length == 0) {
+            if (!x) {
                 blockElement.innerHTML = "Not Found!"
                 FloorElement.innerHTML = "Please Check the Spelling."
                 classNameElement.innerHTML = searchBar.value
                 blockImage.src = `img/NotFound.png`
             }
             else {
-                blockElement.innerHTML = x[0].Block
-                FloorElement.innerHTML = x[0].Floor
+                blockElement.innerHTML = x.Block
+                FloorElement.innerHTML = x.Floor
                 classNameElement.innerHTML = searchBar.value
-                blockImage.src = `img/${x[0].Block}.jpg`
+                blockImage.src = `img/${x.Block}.jpg`
+                let block = fetchBlocks(x.Block)
+                initMap(block.latitude, block.longitude, block.Block)
             }
         })
 
@@ -129,3 +133,18 @@ searchBar.addEventListener("keypress", (event) => {
 )
 
 searchbtn.addEventListener("click", querynRedirect)
+
+function initMap(latitude, longitude, title) {
+    // Initialize the map
+    let map = new google.maps.Map(document.getElementById('map'), {
+        center: { lat: latitude, lng: longitude },
+        zoom: 18
+    });
+
+    // Create and place the marker
+    marker = new google.maps.Marker({
+        position: { lat: latitude, lng: longitude },
+        map: map,
+        title: title
+    });
+    }

@@ -7,8 +7,10 @@
     <title>Find My Class</title>
     <link rel="icon" type="image/x-icon" href="img/favicon.ico">
     <link rel="stylesheet" href="Css/style.css">
+    <link rel="stylesheet" href="Css/nav.css">
     <meta name="description" content="Master your schedule at Graphic Era Hill Univ Bhimtal! ClassFinder simplifies GEHU Bhimtal class searches - find classes, plan your semester & conquer your academic journey. Search Now!" />
     <script src="js/importPage.js"></script>
+    <script async src="https://maps.googleapis.com/maps/api/js?"></script>
 </head>
 
 <body onload="onLoadHandler()">
@@ -46,9 +48,14 @@
         </div>
 
 
-
-        <div class="img-blur-bg">
-            <img id="Block-Image" src="img/images.png" alt="Block Image">
+        <div class="right-output">
+            <div class="img-blur-bg">
+                <img id="Block-Image" width="400px" src="img/images.png" alt="Block Image">
+            </div>
+            <div class="img-blur-bg">
+                <div id="map"></div>
+            </div>
+            
         </div>
     </section>
 
@@ -58,11 +65,15 @@
 
     <script type="module" src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.esm.js"></script>
     <script nomodule src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.js"></script>
-    <script type="module" src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2"></script>
     <script src="js/hideSection.js"></script>
     <script type="module" src="js/script.js"></script>
     <script src="js/searchNav.js"></script>
     <script src="js/darkmode.js" defer></script>
+    
+    <script>
+        
+    </script>
+
 </body>
 
 </html>

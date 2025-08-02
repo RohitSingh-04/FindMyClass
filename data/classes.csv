@@ -1,0 +1,123 @@
+Class_Name,Floor,Block
+ADVANCEDTHERMODYNAMICSLAB,Basement,Mechanical Engineering Department
+ADVANCELAB,Basement,Mechanical Engineering Department
+ADVANCENURSINGLAB,Ground Floor,Nursing Block
+AGRONOMYLAB,Ground Floor,Main Academic Block
+BARBER,2nd Floor,Cafeteria
+BOARDROOM,Ground Floor,Admin Block
+CAMERAROOM,2nd Floor,Admin Block
+CENTRALINSTRUMENTATIONROOM,Ground Floor,Main Academic Block
+CIR,Ground Floor,Main Academic Block
+CIVILLAB,Basement,Mechanical Engineering Department
+CIVILLAB1,"Ground floor ",Academic Block 01
+CIVILLAB2,2nd floor,Academic Block 01
+CL6,1st Floor,Nursing Block
+CL7,2nd Floor,Nursing Block
+CLA7A,3rd floor,Academic Block 01
+CLA8A,"3rd floor ",Academic Block 01
+CLA8B,3rd floor,Academic Block 01
+CLASSROOM,Ground Floor,Nursing Block
+CLB3,1st Floor,Nursing Block
+CLB5,2nd Floor,Nursing Block
+CLB8A,3rd Floor,Nursing Block
+COMMUNITY,Basement,Nursing Block
+COMMUNITYHEALTHNURSINGLAB,Basement,Nursing Block
+COMPUTERLAB1,Ground Floor,Admin Block
+COMPUTERLAB2,Ground Floor,Admin Block
+COMPUTERLAB3,GroundFloor,Mechanical Engineering Department
+COMPUTERLAB4,"1st floor ",Academic Block 01
+COMPUTERLAB5,2nd floor,Academic Block 01
+COMPUTERLAB6,1st Floor,Nursing Block
+COMPUTERLAB7,2nd Floor,Nursing Block
+CONFERENCEROOM,Ground Floor,Admin Block
+CR1,Ground Floor,Admin Block
+CR10,1st Floor,Main Academic Block
+CR11,2nd Floor,Main Academic Block
+CR12,2nd Floor,Main Academic Block
+CR2,Ground Floor,Admin Block
+CR3,1st Floor,Admin Block
+CR4,1st Floor,Admin Block
+CR5,1st Floor,Admin Block
+CR6,Basement,Main Academic Block
+CR7,Basement,Main Academic Block
+CR8,1st Floor,Main Academic Block
+CR9,1st Floor,Main Academic Block
+CRB7A,3rd Floor,Nursing Block
+CRB7B,3rd Floor,Nursing Block
+CYBERLIBRARY,Basement,Admin Block
+DEMONSTRATIONAGRONOMYANDHORTICULTURELAB,Ground Floor,Main Academic Block
+DEMONSTRATIONLAB,Ground Floor,Main Academic Block
+DEPARTMENTALSTORE,2nd Floor,Cafeteria
+DIRECTOR,Ground Floor,Main Academic Block
+DIRECTORCABIN,Ground Floor,Admin Block
+DIRECTOROFFICE,Ground Floor,Admin Block
+DOCTORCABIN,1st Floor,Cafeteria
+DS,2nd Floor,Cafeteria
+DYNAMICSOFMACHINELAB,GroundFloor,Mechanical Engineering Department
+ELECTRONICLAB,1st Floor,Admin Block
+ELECTRONICLAB3,"1st floor ",Academic Block 01
+ENGINEERINGCHEMISTRYLAB,1st Floor,Main Academic Block
+EXAMCELL,2nd Floor,Admin Block
+FACULTYROOM,Basement,Nursing Block
+FEECELL,Ground Floor,Admin Block
+FLUIDMACHINERYLAB,GroundFloor,Mechanical Engineering Department
+FOODANDNUTRITION,Basement,Nursing Block
+GEOGRAPHICALLAB,"Ground floor ",Academic Block 01
+GIRLSCOMMONROOM,Basement,Nursing Block
+GYM,2nd Floor,Cafeteria
+HEATANDMASSTRANSFERLAB,Basement,Mechanical Engineering Department
+HIGHPERFORMANCECOMPUTINGLAB,GroundFloor,Mechanical Engineering Department
+HORTICULTURELAB,Ground Floor,Main Academic Block
+HUMANANATOMYANDPHYSIOLOGY,Basement,Main Academic Block
+INCUBATIONCENTER,GroundFloor,Mechanical Engineering Department
+LIBRARIAN,Basement,Admin Block
+LIBRARY,Basement,Admin Block
+LTA1,"Ground floor ",Academic Block 01
+LTA2,"Ground floor ",Academic Block 01
+LTA3,"1st floor ",Academic Block 01
+LTA4,"1st floor ",Academic Block 01
+LTA5,2nd floor,Academic Block 01
+LTA6,2nd floor,Academic Block 01
+LTA7,"3rd floor ",Academic Block 01
+LTA8,"3rd floor ",Academic Block 01
+LTB2,Ground Floor,Nursing Block
+LTB3,1st Floor,Nursing Block
+LTB4,1st Floor,Nursing Block
+LTB5,2nd Floor,Nursing Block
+LTB7,3rd Floor,Nursing Block
+LTB8,3rd Floor,Nursing Block
+MACHINEROOM,Ground Floor,Main Academic Block
+MEDICALROOM,1st Floor,Cafeteria
+MESS,Ground Floor,Cafeteria
+NUTRITIONLAB,Basement,Nursing Block
+OBGANDPEDIATRICSLAB,Ground Floor,Nursing Block
+PEDIATRICSLAB6,1st Floor,Nursing Block
+PHARMACEUTICALANAYLSISLAB1,Basement,Main Academic Block
+PHARMACEUTICALANAYLSISLABI,Basement,Main Academic Block
+PHARMACEUTICALCHEMISTRYLAB1,Basement,Main Academic Block
+PHARMACEUTICALCHEMISTRYLAB2,Basement,Main Academic Block
+PHARMACEUTICALCHEMISTRYLABII,Basement,Main Academic Block
+PHARMACEUTICSLAB1,Ground Floor,Main Academic Block
+PHARMACEUTICSLAB2,Basement,Main Academic Block
+PHARMACEUTICSLABI,Ground Floor,Main Academic Block
+PHARMACEUTICSLABII,Basement,Main Academic Block
+PHARMACEUTRALCHEMISTRYLABI,Basement,Main Academic Block
+PHARMACOGNOSY2,1st Floor,Main Academic Block
+PHARMAGOLOGYLAB,Basement,Main Academic Block
+PHARMSCOGNOSYII,1st Floor,Main Academic Block
+PHYSICSLAB,1st Floor,Admin Block
+PIZZASLICE,1st Floor,Cafeteria
+PRECLINICALSCIENCESLAB,Basement,Nursing Block
+REFERENCESSECTION,Basement,Admin Block
+REFRIGERATIONANDAIRCONDITIONINGLAB,GroundFloor,Mechanical Engineering Department
+RESEARCHCELL,3rd floor,Academic Block 01
+SAISANDHYAHALL,1st Floor,Mechanical Engineering Department
+SCHOOLOFAGRICULTURE,Ground Floor,Main Academic Block
+SEMINARHALL1,"Ground floor ",Academic Block 01
+SEMINARHALL2,Ground Floor,Main Academic Block
+SEMINARHALL3,Ground Floor,Main Academic Block
+SERVERROOM,1st Floor,Admin Block
+STOREROOM1,Basement,Main Academic Block
+STOREROOMI,Basement,Main Academic Block
+THERMODYNAMICSLAB,Basement,Mechanical Engineering Department
+WORKSHOP,GroundFloor,Mechanical Engineering Department

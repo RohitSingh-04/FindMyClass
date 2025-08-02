@@ -28,10 +28,9 @@
 <body>
   <h1>Live Location</h1>
   <div id="map"></div>
-  <script async src="https://maps.googleapis.com/maps/api/js?key=AIzaSyA7VRrJc0nxBoH2WhemLcwhEqQnUCPfcTA&libraries=marker"></script>
+  <script async src="https://maps.googleapis.com/maps/api/js?"></script>
   <script>
-    const supabaseUrl = 'https://vykcwuxbhhfptwmpxryn.supabase.co';
-    const supabaseKey = 'eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6InZ5a2N3dXhiaGhmcHR3bXB4cnluIiwicm9sZSI6InNlcnZpY2Vfcm9sZSIsImlhdCI6MTcyODY2MTAyMCwiZXhwIjoyMDQ0MjM3MDIwfQ.Uo2vF2hW7M_NJXwWP657bb7koKem2yA2Z5P8gxrgc4o'; // Replace with your actual Supabase key
+    
     let map;
     let marker;
 
@@ -48,26 +47,6 @@
         map: map,
         title: 'Your Location'
       });
-    }
-
-    async function logLocation(latitude, longitude) {
-      const time = new Date().toISOString();
-      const response = await fetch(`${supabaseUrl}/rest/v1/locations_logs`, {
-        method: 'POST',
-        headers: {
-          'Content-Type': 'application/json',
-          'apikey': supabaseKey,
-          'Authorization': `Bearer ${supabaseKey}`
-        },
-        body: JSON.stringify([{ latitude, longitude, time }])
-      });
-
-      if (!response.ok) {
-        const error = await response.json();
-        console.error('Error logging location:', error);
-      } else {
-        console.log('Location logged successfully');
-      }
     }
 
     function updateMarkerPosition(latitude, longitude) {

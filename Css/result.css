@@ -8,194 +8,98 @@
 
 /*  set background img */
 .output {
-
     height: 100vh;
     background-image: url("/img/GEHU-bg-filter.png");
     background-repeat: no-repeat;
     background-position: center;
     background-size: cover;
     filter: brightness();
-    /* display: flex; */
+    display: flex;
+    flex-direction: row;
     align-items: center;
-    flex-direction: column-reverse;
-    /* align-content: flex-end; */
-    justify-content: flex-end;
-
-
+    justify-content: space-around;
 }
 
 
 .text-bg {
-    /* display: inline-block; */
     border-radius: 18px;
-    height: 225px;
-    width: 85vw;
-    /* background-color: #112240b4;
-    box-shadow: 0px 0px 80px #112240b4; */
-    margin-top: 55vh;
     font-family: "Poppins";
     font-weight: 600;
     font-size: 38px;
     text-align: center;
     color: white;
-
-}
-
-#move-inp-btn {
-    color: rgb(125, 20, 254);
-
-    border: 0px;
-    background-color: black;
-}
-
-
-.text-bg div {
-    /* margin: 40px; */
-    text-align: left;
-    text-shadow: 0px 0px 23px white;
-
-}
-
-.image-data {
-    /* display: flex;*/
-    position: relative;
-    width: 50vw;
-    height: 100vh;
-
-
-}
-
-.img-blur-bg {
-    border-radius: 18px;
-    height: 30vh;
-    width: 90vw;
-    background-color: #ffffff72;
-    box-shadow: 0px 0px 80px #bebebe37;
-    position: absolute;
-    margin-top: 10vh;
-    
     display: flex;
-    justify-content: center;
+    flex-direction: column;
+    justify-content: start;
+    text-wrap: wrap;
+}
+
+.right-output{
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+}
+
+#map{
+    flex-grow: 1;
+    height: 30vh;
+    width: 400px;
+    border-radius: 10px;
+}
+
+#Block-Image{
+    border-radius: 10px;
+}
+
+
+@media only screen and (max-width:620px) {
+    .output {
+    background-image: url("/img/GEHU-bg-filter.png");
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: cover;
+    filter: brightness();
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: space-around;
+}
+
+.text-bg {
+    border-radius: 18px;
+    font-family: "Poppins";
+    font-weight: 600;
+    font-size: 38px;
+    text-align: center;
+    color: white;
+    display: flex;
+    flex-direction: column;
+    justify-content: start;
+    text-wrap: wrap;
+    word-wrap: break-word;
+    width: 100vw;
+}
+
+
+.right-output{
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
     align-items: center;
 }
 
-.img-blur-bg img {
-    position: absolute;
-    z-index: 100;
-    border-radius: 18px;
-    width: 85vw;
-    
+#map{
+    flex-grow: 1;
+    height: 30vh;
+    width: 80vw;
+    border-radius: 10px;
+    margin-bottom: 30vh ;
 }
 
-@media screen and (min-width:520px) {
-    .text-bg {
-        /* background-color: blue; */
-        position: relative;
-        top: 35px;
-        height: 25vh;
-    }
-
-    .output {
-        display: flex;
-        align-items: center;
-        flex-direction: column-reverse;
-        align-content: space-between;
-        justify-content: flex-end;
-        
-    }
-
-    .img-blur-bg {
-        height: 35vh;
-    }
-
-    .img-blur-bg img {
-        width: 75vw;
-    }
+#Block-Image{
+    border-radius: 10px;
+    width: 80vw;
 }
 
-@media screen and (min-width:658px) {
-    .text-bg {
-        position: relative;
-        top: 35px;
-        height: 25vh;
-    }
-
-    .output {
-        display: flex;
-        align-items: center;
-        flex-direction: column-reverse;
-        align-content: space-between;
-        justify-content: flex-end;
-        
-    }
-
-    .img-blur-bg {
-        height: 45vh;
-    }
-
-    .img-blur-bg img {
-        width: 75vw;
-    }
 }
 
-@media screen and (min-width:866px) {
-    .text-bg {
-        position: relative;
-        top: 45px;
-        height: 25vh;
-    }
-
-    .output {
-        display: flex;
-        align-items: center;
-        flex-direction: column-reverse;
-        align-content: space-between;
-        justify-content: flex-end;
-        
-    }
-
-    .img-blur-bg {
-        height: 47vh;
-    }
-
-    .img-blur-bg img {
-        width: 75vw;
-    }
-}
-
-@media screen and (min-width:1025px) {
-
-    .output {
-        flex-direction: row;
-    }
-
-    .text-bg {
-        display: flex;
-        flex-direction: column;
-        justify-content: center;
-        width: 35vw;
-        height: 40vh;
-        position: absolute;
-        left: 130px;
-        top: 0px;
-    }
-
-    .text-bg :nth-child(1){
-        margin-bottom: 10px;
-    }
-
-    .img-blur-bg {
-        width: 40vw;
-        height: 55vh;
-        position: absolute;
-        top: 35px;
-        right: 60px;
-    }
-
-    .img-blur-bg img {
-
-        width: 35vw;
-    }
-
-
-}
